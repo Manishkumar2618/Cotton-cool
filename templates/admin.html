@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container admin-page">
+  <div class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <p>Overview of sales, inventory, and popular products.</p>
+  </div>
+  <div class="admin-controls">
+    <h2>Admin Controls</h2>
+    <div class="admin-card">
+      <h3>Add New Product</h3>
+      <label>Name<input id="newName" type="text" placeholder="Product name"></label>
+      <label>Category<input id="newCategory" type="text" placeholder="Category"></label>
+      <label>Price<input id="newPrice" type="number" placeholder="Price"></label>
+      <label>Stock<input id="newStock" type="number" placeholder="Stock"></label>
+      <label>Images (comma-separated URLs)<input id="newImages" type="text" placeholder="/static/images/p1.jpg,/static/images/p2.jpg"></label>
+      <label>Description<textarea id="newDescription" placeholder="Description"></textarea></label>
+      <label><input id="newFeatured" type="checkbox"> Featured</label>
+      <button class="btn btn-primary" onclick="adminAddProduct()">Add Product</button>
+    </div>
+    <div class="admin-card">
+      <h3>Existing Products</h3>
+      <div id="adminProductsList">Loading products…</div>
+    </div>
+  </div>
+  <div class="admin-grid">
+    <div class="stat-card">
+      <h3>Total Sales</h3>
+      <p>₹{{ sales_total }}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Orders</h3>
+      <p>{{ orders|length }}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Popular Products</h3>
+      <ul>
+        {% for product in popular %}
+        <li>{{ product.name }} ({{ product.sales }} sold)</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="analytics-grid">
+    <div class="stat-card">
+      <h3>Sales by Category</h3>
+      <ul>
+        {% for category, value in sales_by_category.items() %}
+        <li>{{ category }}: ₹{{ value }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="stat-card">
+      <h3>Order Status</h3>
+      <ul>
+        {% for status, count in orders_by_status.items() %}
+        <li>{{ status }}: {{ count }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="stat-card">
+      <h3>Top Customers</h3>
+      <ul>
+        {% for customer in top_customers %}
+        <li>{{ customer.customer }}: ₹{{ customer.total }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% if inventory_alerts %}
+  <div class="alert-panel">
+    <h2>Low Stock Alerts</h2>
+    <ul>
+      {% for product in inventory_alerts %}
+      <li>{{ product.name }} ({{ product.stock }} left)</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  <div class="trend-panel">
+    <h2>Sales Trend</h2>
+    <ul>
+      {% for sale in sales_trend %}
+      <li>{{ sale.date }}: ₹{{ sale.revenue }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="order-table">
+    <h2>Recent Orders</h2>
+    <table>
+      <thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th><th>Phone</th><th>Pin Code</th><th>Date</th></tr></thead>
+      <tbody>
+        {% for order in orders %}
+        <tr>
+          <td>{{ order.order_id[:8] }}</td>
+          <td>{{ order.customer }}</td>
+          <td>₹{{ order.total }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.shipping_phone or '—' }}</td>
+          <td>{{ order.shipping_pincode or '—' }}</td>
+          <td>{{ order.timestamp[:10] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="order-received">
+    <h2>Order Received Details</h2>
+    {% for order in orders %}
+    <div class="order-received-card">
+      <h3>Order {{ order.order_id[:8] }}</h3>
+      <p><strong>Customer:</strong> {{ order.customer }}</p>
+      <p><strong>Status:</strong> {{ order.status }}</p>
+      <p><strong>Shipping:</strong> {{ order.shipping_address or 'N/A' }}</p>
+      <p><strong>Phone:</strong> {{ order.shipping_phone or 'N/A' }} • Pin: {{ order.shipping_pincode or 'N/A' }}</p>
+      <p><strong>Items:</strong> {{ order.items|length }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

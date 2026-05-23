@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+  <defs>
+    <linearGradient id="grad8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f48fb1"/>
+      <stop offset="100%" stop-color="#8e24aa"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="480" rx="48" fill="url(#grad8)" />
+  <path d="M150 140 C170 80 310 80 330 140 L330 320 C310 360 170 360 150 320 Z" fill="#fff" opacity="0.9" />
+  <path d="M170 140 C190 100 290 100 310 140" fill="none" stroke="#8e24aa" stroke-width="18" stroke-linecap="round" />
+  <text x="240" y="420" font-family="Inter, sans-serif" font-size="30" font-weight="700" fill="#4a148c" text-anchor="middle">Sunset Hoodie</text>
+</svg>

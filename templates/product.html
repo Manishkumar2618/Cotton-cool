@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container product-page">
+  <div class="product-hero">
+    <div class="gallery">
+      {% for image in product.images %}
+      <div class="gallery-item">
+        <img src="{{ image }}" alt="{{ product.name }}">
+      </div>
+      {% endfor %}
+    </div>
+    <div class="product-details">
+      <div class="product-meta">{{ product.category }}</div>
+      <h1>{{ product.name }}</h1>
+      <div class="price">₹{{ product.price }}</div>
+      <p>{{ product.description }}</p>
+      <div class="detail-row">
+        <div><strong>Fabric</strong><br>{{ product.fabric }}</div>
+        <div><strong>Availability</strong><br>{{ product.stock }} in stock</div>
+      </div>
+      <div class="size-row">
+        <label>Size<select id="sizeSelect"><option>S</option><option>M</option><option>L</option><option>XL</option></select></label>
+        <label>Color<select id="colorSelect"><option>{{ product.colors[0] }}</option>{% for color in product.colors[1:] %}<option>{{ color }}</option>{% endfor %}</select></label>
+      </div>
+      <div class="product-actions">
+        <button class="btn btn-primary" onclick="addToCart('{{ product.id }}', 1)">Add to Cart</button>
+        <a class="btn btn-secondary" href="/customize/{{ product.id }}">Customize</a>
+      </div>
+      <div class="size-chart">
+        <h4>Size Chart</h4>
+        <table>
+          <tr><th>Size</th><th>Chest</th><th>Waist</th></tr>
+          <tr><td>S</td><td>34"</td><td>28"</td></tr>
+          <tr><td>M</td><td>38"</td><td>32"</td></tr>
+          <tr><td>L</td><td>42"</td><td>34"</td></tr>
+          <tr><td>XL</td><td>46"</td><td>38"</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <section class="recommendations">
+    <h2>You may also like</h2>
+    <div class="products-grid">
+      {% for rec in product.reviews[:3] %}
+      <article class="product-card">
+        <div class="product-thumb">
+          <img src="{{ product.images[0] }}" alt="{{ product.name }}">
+        </div>
+        <div class="product-copy">
+          <h3>{{ rec.user }} loves it</h3>
+          <p>Customer rated {{ rec.rating }} stars.</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</section>
+{% endblock %}

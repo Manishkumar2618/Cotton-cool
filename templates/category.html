@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container category-top">
+  <div class="page-intro">
+    <h1>{{ category }}</h1>
+    <p>Filter by size, color, fabric, or price to find the perfect fit.</p>
+  </div>
+  <aside class="filter-panel">
+    <form method="get" class="filter-form">
+      <h3>Filters</h3>
+      <label>Size<select name="size"><option value="">Any</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option></select></label>
+      <label>Color<select name="color"><option value="">Any</option><option value="Black">Black</option><option value="White">White</option><option value="Grey">Grey</option><option value="Blue">Blue</option></select></label>
+      <label>Fabric<select name="fabric"><option value="">Any</option><option value="Cotton Blend">Cotton Blend</option><option value="Premium Cotton">Premium Cotton</option><option value="Polyester Stretch">Polyester Stretch</option><option value="Viscose Blend">Viscose Blend</option></select></label>
+      <div class="price-fields">
+        <label>Min Price<input type="number" name="price_min" placeholder="0"></label>
+        <label>Max Price<input type="number" name="price_max" placeholder="1000"></label>
+      </div>
+      <button type="submit" class="btn btn-primary">Apply</button>
+    </form>
+  </aside>
+  <div class="category-products">
+    {% if products %}
+    <div class="products-grid">
+      {% for product in products %}
+      <article class="product-card">
+        <a href="/product/{{ product.id }}">
+          <div class="product-thumb">
+            <img src="{{ product.images[0] }}" alt="{{ product.name }}">
+          </div>
+        </a>
+        <div class="product-copy">
+          <h3><a href="/product/{{ product.id }}">{{ product.name }}</a></h3>
+          <div class="price">₹{{ product.price }}</div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="empty-state">No products match this filter. Try another combination.</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

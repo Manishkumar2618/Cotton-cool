@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+  <defs>
+    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2e2f60"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="480" rx="48" fill="url(#grad2)" />
+  <path d="M120 140 C140 80 340 80 360 140 L360 340 C340 400 140 400 120 340 Z" fill="#fff" opacity="0.9" />
+  <text x="240" y="260" font-family="Inter, sans-serif" font-size="34" font-weight="800" fill="#2e2f60" text-anchor="middle">Retro Tee</text>
+  <text x="240" y="310" font-family="Inter, sans-serif" font-size="20" fill="#2e2f60" text-anchor="middle">Street style</text>
+</svg>

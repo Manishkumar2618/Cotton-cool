@@ -1,0 +1,138 @@
+[
+  {
+    "id": "shirt-01",
+    "name": "Ocean Breeze Shirt",
+    "category": "Shirts",
+    "price": 349.00,
+    "description": "A sleek button-up with breathable fabric and easygoing prints for everyday elegance.",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Blue", "White", "Navy"],
+    "fabric": "Cotton Blend",
+    "stock": 28,
+    "sales": 30,
+    "images": ["/static/images/product-shirt-01-400.jpg", "/static/images/product-shirt-01-800.jpg", "/static/images/product-ocean-breeze-shirt.svg", "/static/images/product-ocean-breeze-shirt.svg"],
+    "featured": true,
+    "reviews": [
+      {"user": "Anjali", "rating": 5, "comment": "Very comfortable and stylish."}
+    ]
+  },
+  {
+    "id": "tshirt-01",
+    "name": "Retro Graphic Tee",
+    "category": "T-Shirts",
+    "price": 299.00,
+    "description": "A soft t-shirt with bold graphics and a modern slim fit. Great for street style.",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black", "Grey", "White"],
+    "fabric": "Premium Cotton",
+    "stock": 44,
+    "sales": 46,
+    "images": ["/static/images/product-tshirt-01-400.jpg", "/static/images/product-tshirt-01-800.jpg", "/static/images/product-retro-graphic-tee.svg", "/static/images/product-retro-graphic-tee.svg"],
+    "featured": true,
+    "reviews": [
+      {"user": "Ria", "rating": 4, "comment": "Nice fit, good for casual wear."}
+    ]
+  },
+  {
+    "id": "trackpant-01",
+    "name": "Flex Track Pants",
+    "category": "Track Pants",
+    "price": 399.00,
+    "description": "Lightweight track pants with stretch fabric and secure pockets for active days.",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Grey", "Black", "Olive"],
+    "fabric": "Polyester Stretch",
+    "stock": 22,
+    "sales": 21,
+    "images": ["/static/images/product-trackpant-01-400.jpg", "/static/images/product-trackpant-01-800.jpg", "/static/images/product-flex-track-pants.svg", "/static/images/product-flex-track-pants.svg"],
+    "featured": true,
+    "reviews": [
+      {"user": "Karan", "rating": 5, "comment": "Excellent comfort and fit."}
+    ]
+  },
+  {
+    "id": "trouser-01",
+    "name": "Smart Slim Trousers",
+    "category": "Trousers",
+    "price": 449.00,
+    "description": "Tailored trousers with stretch waist and sharp silhouette for work or evening wear.",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black", "Charcoal", "Beige"],
+    "fabric": "Viscose Blend",
+    "stock": 17,
+    "sales": 14,
+    "images": ["/static/images/product-trouser-01-400.jpg", "/static/images/product-trouser-01-800.jpg", "/static/images/product-smart-slim-trousers.svg", "/static/images/product-smart-slim-trousers.svg"],
+    "featured": true,
+    "reviews": [
+      {"user": "Priya", "rating": 5, "comment": "Perfect for formal meetings."}
+    ]
+  },
+  {
+    "id": "jacket-01",
+    "name": "Night Street Jacket",
+    "category": "Jackets",
+    "price": 799.00,
+    "description": "A modern street jacket with a bold silhouette, warm lining, and contrast detail.",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black", "Charcoal"],
+    "fabric": "Softshell",
+    "stock": 18,
+    "sales": 12,
+    "images": ["/static/images/product-jacket-01-400.jpg", "/static/images/product-jacket-01-800.jpg", "/static/images/product-night-street-jacket.svg", "/static/images/product-night-street-jacket.svg"],
+    "featured": true,
+    "reviews": [
+      {"user": "Maya", "rating": 5, "comment": "Looks premium and feels warm."}
+    ]
+  },
+  {
+    "id": "jeans-01",
+    "name": "Ripple Denim Jeans",
+    "category": "Jeans",
+    "price": 499.00,
+    "description": "Crisp denim jeans with subtle stretch and a relaxed yet tailored fit.",
+    "sizes": ["28", "30", "32", "34"],
+    "colors": ["Blue", "Dark Blue"],
+    "fabric": "Denim",
+    "stock": 26,
+    "sales": 19,
+    "images": ["/static/images/product-jeans-01-400.jpg", "/static/images/product-jeans-01-800.jpg", "/static/images/product-ripple-denim-jeans.svg", "/static/images/product-ripple-denim-jeans.svg"],
+    "featured": false,
+    "reviews": [
+      {"user": "Amit", "rating": 4, "comment": "Great jeans for everyday wear."}
+    ]
+  },
+  {
+    "id": "sneaker-01",
+    "name": "Fresh Run Sneakers",
+    "category": "Shoes",
+    "price": 699.00,
+    "description": "Lightweight sneakers with breathable mesh and energy-return cushioning.",
+    "sizes": ["7", "8", "9", "10"],
+    "colors": ["White", "Coral"],
+    "fabric": "Mesh",
+    "stock": 34,
+    "sales": 28,
+    "images": ["/static/images/product-sneaker-01-400.jpg", "/static/images/product-sneaker-01-800.jpg", "/static/images/product-fresh-run-sneakers.svg", "/static/images/product-fresh-run-sneakers.svg"],
+    "featured": false,
+    "reviews": [
+      {"user": "Nina", "rating": 5, "comment": "So comfortable for daily runs."}
+    ]
+  },
+  {
+    "id": "hoodie-01",
+    "name": "Cozy Sunset Hoodie",
+    "category": "Hoodies",
+    "price": 549.00,
+    "description": "A plush hoodie with a relaxed fit and soft brushed interior for cooler evenings.",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Pink", "Purple"],
+    "fabric": "Fleece",
+    "stock": 30,
+    "sales": 23,
+    "images": ["/static/images/product-hoodie-01-400.jpg", "/static/images/product-hoodie-01-800.jpg", "/static/images/product-cozy-sunset-hoodie.svg", "/static/images/product-cozy-sunset-hoodie.svg"],
+    "featured": false,
+    "reviews": [
+      {"user": "Tara", "rating": 5, "comment": "Warm and very stylish."}
+    ]
+  }
+]

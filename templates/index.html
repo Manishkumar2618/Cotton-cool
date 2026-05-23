@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero-section">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">New arrivals</span>
+      <h1>Fashion forward apparel for every occasion.</h1>
+      <p>Discover curated collections, customization options, and fast checkout for style that feels made just for you.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/category/shirts">Shop Shirts</a>
+        <a class="btn btn-secondary" href="/customize/shirt-01">Customize Now</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <span class="badge">Trending</span>
+        <h2>Street smart shirts</h2>
+        <p>Lightweight, breathable, and easy-to-style shirts for every wardrobe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="collections-section container">
+  <div class="section-header">
+    <h2>Featured Collections</h2>
+    <p>Shop by category and discover seasonal favorites.</p>
+  </div>
+  <div class="collections-grid">
+    {% for collection in collections %}
+    <a class="collection-card" href="/category/{{ collection.slug }}">
+      <div class="collection-content">
+        <span>{{ collection.title }}</span>
+        <h3>{{ collection.subtitle }}</h3>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+<section class="featured-section container">
+  <div class="section-header">
+    <h2>Featured Products</h2>
+    <p>Top picks selected for quality, comfort, and value.</p>
+  </div>
+  <div class="products-grid">
+    {% for product in featured %}
+    <article class="product-card">
+      <a href="/product/{{ product.id }}">
+        <div class="product-thumb">
+          <img src="{{ product.images[0] }}" alt="{{ product.name }}">
+        </div>
+      </a>
+      <div class="product-copy">
+        <h3><a href="/product/{{ product.id }}">{{ product.name }}</a></h3>
+        <p>{{ product.description }}</p>
+        <div class="price">₹{{ product.price }}</div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

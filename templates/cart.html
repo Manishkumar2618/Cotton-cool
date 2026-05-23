@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container cart-page">
+  <h1>Your Cart</h1>
+  {% if items %}
+  <div class="cart-grid">
+    <div class="cart-list">
+      {% for item in items %}
+      <div class="cart-item">
+        <div class="cart-image">
+          <img src="{{ item.product.images[0] }}" alt="{{ item.product.name }}">
+        </div>
+        <div class="cart-info">
+          <h3>{{ item.product.name }}</h3>
+          <p>Quantity: {{ item.quantity }}</p>
+          <p>Price: ₹{{ item.product.price }}</p>
+          <p>Total: ₹{{ item.item_total }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <aside class="cart-summary">
+      <h2>Order Summary</h2>
+      <p>Subtotal: ₹{{ total }}</p>
+      <p>Shipping: ₹50</p>
+      <p class="summary-total">Total: ₹{{ total + 50 }}</p>
+      <div class="payment-panel">
+        <h3>Payment Options</h3>
+        <div class="payment-options">
+          <label><input type="radio" name="paymentMethod" value="cards" checked> Card / Netbanking</label>
+          <label><input type="radio" name="paymentMethod" value="upi"> UPI</label>
+          <label><input type="radio" name="paymentMethod" value="wallets"> Wallets</label>
+        </div>
+        <p class="payment-note" id="paymentGatewayNote">This checkout uses a placeholder gateway integration. Replace with real payment provider logic.</p>
+      </div>
+      <button class="btn btn-primary" onclick="checkout()">Checkout</button>
+    </aside>
+  </div>
+  {% else %}
+  <p class="empty-state">Your cart is empty. Browse our collections to add stylish apparel.</p>
+  {% endif %}
+</section>
+{% endblock %}

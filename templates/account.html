@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container account-page">
+  <div class="account-grid">
+    <div class="account-panel">
+      <h1>Account</h1>
+      <div class="card" id="loginBlock">
+        <h3>Login</h3>
+        <label>Username<input id="loginUsername" type="text" placeholder="username"></label>
+        <label>Password<input id="loginPassword" type="password" placeholder="password"></label>
+        <button class="btn btn-primary" onclick="login()">Login</button>
+      </div>
+      <div class="card" id="signupBlock">
+        <h3>Sign Up</h3>
+        <label>Username<input id="signupUsername" type="text" placeholder="username"></label>
+        <label>Email<input id="signupEmail" type="email" placeholder="email"></label>
+        <label>Password<input id="signupPassword" type="password" placeholder="password"></label>
+        <label>Phone<input id="signupPhone" type="text" placeholder="Phone number"></label>
+        <label>Pincode<input id="signupPincode" type="text" placeholder="Pin code"></label>
+        <label>Address<textarea id="signupAddress" placeholder="Shipping address"></textarea></label>
+        <button class="btn btn-secondary" onclick="signup()">Sign Up</button>
+      </div>
+      <div class="card hidden" id="profileBlock">
+        <h3>Welcome back, <span id="profileName">Customer</span></h3>
+        <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="profilePhone"></span></p>
+        <p><strong>Pincode:</strong> <span id="profilePincode"></span></p>
+        <p><strong>Address:</strong> <span id="profileAddress"></span></p>
+        <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+        <button class="btn btn-secondary" onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <aside class="account-summary">
+      <h2>Order History</h2>
+      <div id="ordersContainer"></div>
+      <p id="emptyOrders" class="empty-state">Login to view previous orders and track your latest purchases.</p>
+    </aside>
+  </div>
+</section>
+{% endblock %}

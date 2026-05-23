@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotton & Cool</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="/static/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/static/images/logo-icon.svg" alt="Cotton & Cool logo" width="40" height="40">
+        Cotton & Cool
+      </a>
+      <button class="mobile-toggle" aria-label="Open menu">☰</button>
+      <form class="header-search" action="/search" method="get">
+        <input type="search" name="q" placeholder="Search styles, shirts, tees..." aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/category/shirts">Shirts</a>
+        <a href="/category/t-shirts">T-Shirts</a>
+        <a href="/category/track-pants">Track Pants</a>
+        <a href="/category/trousers">Trousers</a>
+        <a href="/customize/shirt-01">Customize</a>
+        <a href="/account">Account</a>
+        <a href="/admin">Admin</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="/cart">Cart</a>
+        <a class="btn btn-secondary" href="/account">Account</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Cotton & Cool &copy; {{ now.year }}. Trendy apparel with smart style and customization.</p>
+      <p>Built with Python, HTML, CSS and Java support.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container customize-page">
+  <div class="customize-grid">
+    <div class="customize-preview">
+      <h1>Customize {{ product.name }}</h1>
+      <div class="mockup-card">
+        <div class="mockup-image" id="previewImage">Preview your design here</div>
+      </div>
+      <div class="customization-details">
+        <p>Select font, color, and placement to personalize your design.</p>
+        <p>Upload your own design file and see it previewed instantly.</p>
+      </div>
+    </div>
+    <div class="customize-form">
+      <h2>Design options</h2>
+      <label>Upload design<input type="file" id="designUpload" accept="image/png, image/jpeg, image/svg+xml"></label>
+      <label>Font<select id="fontSelect"><option>Arial</option><option>Georgia</option><option>Monaco</option></select></label>
+      <label>Color<select id="colorSelect"><option>Black</option><option>White</option><option>Red</option><option>Blue</option></select></label>
+      <label>Placement<select id="placementSelect"><option>Center</option><option>Left chest</option><option>Right chest</option><option>Back</option></select></label>
+      <button class="btn btn-primary" onclick="previewCustomization()">Preview</button>
+      <button class="btn btn-secondary" onclick="addCustomizationToCart('{{ product.id }}')">Add to Cart</button>
+    </div>
+  </div>
+</section>
+{% endblock %}
